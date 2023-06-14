@@ -5,7 +5,7 @@
 
 The [Express](https://expressjs.com/) middleware to authenticate and authorized users using [AWS Cognito](https://aws.amazon.com/cognito/)
 [user pools](https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-identity-pools.html).
-It validates a JWT token (either an id or access token) and populates `req.cognitoUser`, or any other property of your choice,
+It validates a JWT token (either an id or access token) and populates `req.user`, or any other property of your choice,
 with its deciphered content. Simple helpers are provided to make decisions on accessibility of API endpoints for a given user.
 
 This project is based on [cognito-toolkit](https://www.npmjs.com/package/cognito-toolkit). It is a sister project of [koa-cognito-middleware](https://www.npmjs.com/package/koa-cognito-middleware).
@@ -43,7 +43,7 @@ router1.post('/d', hasScope('writers'),
   (_, res) => res.send('only with a writers scope'));
 
 router1.post('/user',
-  (req, res) => res.json(req.cognitoUser || {}));
+  (req, res) => res.json(req.user || {}));
 
 app.use('/', router1);
 
@@ -65,7 +65,7 @@ const validator = async (req, groups, scopes) => {
 app
   .use(isAllowed(validator))
   .get('/lift', (req, res) => {
-    const user = req.cognitoUser;
+    const user = req.user;
     if (user) {
       user.setAuthCookie(req, res, {domain: 'api.my-domain.com'});
     }
