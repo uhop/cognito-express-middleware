@@ -1,0 +1,36 @@
+{
+  "name": "cognito-express-middleware",
+  "version": "1.4.7",
+  "description": "Express middleware for AWS Cognito integration.",
+  "type": "commonjs",
+  "main": "index.js",
+  "scripts": {
+    "start": "node local-test/index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/uhop/cognito-express-middleware.git"
+  },
+  "keywords": [
+    "express",
+    "middleware",
+    "aws",
+    "cognito"
+  ],
+  "author": "Eugene Lazutkin <eugene.lazutkin@gmail.com> (http://lazutkin.com)",
+  "license": "BSD-3-Clause",
+  "bugs": {
+    "url": "https://github.com/uhop/cognito-express-middleware/issues"
+  },
+  "homepage": "https://github.com/uhop/cognito-express-middleware#readme",
+  "dependencies": {
+    "cognito-toolkit": "^1.0.5"
+  },
+  "devDependencies": {
+    "express": "^4.18.2"
+  },
+  "files": [
+    "/*.js",
+    "/utils"
+  ]
+}
