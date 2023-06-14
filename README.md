@@ -167,6 +167,7 @@ The latter two parameters are arrays of strings listing `cognito:groups` and `sc
 
 # Versions
 
+- 1.4.8 *Updated README.*
 - 1.4.7 *The initial public release.*
 
 # License
