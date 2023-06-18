@@ -49,7 +49,7 @@ app.use('/', router1);
 
 // protect all routes with a single validator
 
-const router2 = new Router();
+const router2 = express.Router();
 // populate router2
 
 const readMethods = {GET: 1, HEAD: 1, OPTIONS: 1};
